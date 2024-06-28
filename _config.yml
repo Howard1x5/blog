@@ -30,31 +30,27 @@ authors:
       email:          howard1x5@protonmail.com
       twitter:        https://x.com/5x1drawoh?t=yOiQyVzJA_MGy3Rmk_l3BA&s=09
 
- 
 # Defaults
 defaults:
-
   # all posts
   - scope:
       path: "_posts"
     values:
       layout: post
       author: 
-      
+
   # all pages
   - scope:
       path: "_pages"
     values:
       layout: page
-      
+
 # Syntax
 markdown: kramdown
 highlighter: rouge
 
 # Paginate
 paginate: 10
-
-
 
 # Exclude metadata and development time dependencies (like Grunt plugins)
 exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules]
