@@ -3,8 +3,8 @@ name: 'blog'
 description: 'Description of my blog to track my projects'
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
-baseurl: '/blog' # subpath of the site
-url: 'https://howard1x5.github.io' # the base hostname & protocol for your site
+baseurl: '' # subpath of the site
+url: 'https://localhost:4000' # the base hostname & protocol for your site
 github_username: howard1x5
 disqus: 'demowebsite'
 email: 'cjh_719@outlook.com'
@@ -25,20 +25,11 @@ plugins:
   
 authors:
     sal:
-      name:           Sal
-      site:           https://www.wowthemes.net
-      avatar:         /assets/images/avatar1.jpg
-      bio:            "Hi, I am Sal, the author of Mundana, the theme you're currently previewing. I hope you like it!"
-      email:          wowthemesnet@gmail.com
-      twitter:        https://twitter.com/wowthemesnet
+      name:           Clinton
+      avatar:         /assets/images/thumb.jpeg
+      email:          howard1x5@protonmail.com
+      twitter:        https://x.com/5x1drawoh?t=yOiQyVzJA_MGy3Rmk_l3BA&s=09
 
-    jane:
-      name:           Jane
-      site:           https://www.wowthemes.net
-      avatar:         /assets/images/avatar2.jpg
-      bio:            "Blogger, fashionista, love to explore new ideas and write on my morning coffee!"
-      email:          fakemail@gmail.com
-      twitter:        https://twitter.com/wowthemesnet
  
 # Defaults
 defaults:
@@ -48,8 +39,7 @@ defaults:
       path: "_posts"
     values:
       layout: post
-      author: sal
-      avatar: /assets/images/avatar1.jpg
+      author: 
       
   # all pages
   - scope:

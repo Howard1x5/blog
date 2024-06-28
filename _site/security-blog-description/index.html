@@ -4,23 +4,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Contact | blog</title>
+    <title>Security Blog Description | blog</title>
 
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Contact | blog</title>
+<title>Security Blog Description | blog</title>
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="Contact" />
+<meta property="og:title" content="Security Blog Description" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Description of my blog to track my projects" />
-<meta property="og:description" content="Description of my blog to track my projects" />
-<link rel="canonical" href="http://localhost:4000/contact.html" />
-<meta property="og:url" content="http://localhost:4000/contact.html" />
+<meta name="description" content="Welcome to my security blog. I will document various projects and share detailed instructions. My first goal is to create a testing lab on AWS, complete with step-by-step directions and a Terraform script for easy replication. This will be a resource for anyone interested in setting up a similar environment." />
+<meta property="og:description" content="Welcome to my security blog. I will document various projects and share detailed instructions. My first goal is to create a testing lab on AWS, complete with step-by-step directions and a Terraform script for easy replication. This will be a resource for anyone interested in setting up a similar environment." />
+<link rel="canonical" href="http://localhost:4000/security-blog-description/" />
+<meta property="og:url" content="http://localhost:4000/security-blog-description/" />
 <meta property="og:site_name" content="blog" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Contact" />
+<meta property="og:image" content="http://localhost:4000/assets/images/main1.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-06-14T00:00:00-06:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/assets/images/main1.jpg" />
+<meta property="twitter:title" content="Security Blog Description" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Description of my blog to track my projects","headline":"Contact","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"}},"url":"http://localhost:4000/contact.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-06-14T00:00:00-06:00","datePublished":"2024-06-14T00:00:00-06:00","description":"Welcome to my security blog. I will document various projects and share detailed instructions. My first goal is to create a testing lab on AWS, complete with step-by-step directions and a Terraform script for easy replication. This will be a resource for anyone interested in setting up a similar environment.","headline":"Security Blog Description","image":"http://localhost:4000/assets/images/main1.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/security-blog-description/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"}},"url":"http://localhost:4000/security-blog-description/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -111,12 +114,12 @@ var documents = [{
     "id": 3,
     "url": "http://localhost:4000/categories.html",
     "title": "Categories",
-    "body": "          Categories               test with picture:                                  		Second Test Post	: 		  This is a second post to see what it will look like on the main page. 	 			In 				test with picture, 								Jun 14, 2024						                              main:                                  		Security Blog Description	: 		  Welcome to my security blog. I will document various projects and share detailed instructions. My first goal is to create a testing lab on AWS, complete with step-by-step directions a. . . 	 			In 				main, 								Jun 14, 2024						                                             Featured:    				                  "
+    "body": "          Categories          {% for category in site. categories %}     {{ category[0] }}:           {% assign pages_list = category[1] %}    {% for post in pages_list %}    {% if post. title != null %}     {% if group == null or group == post. group %}           {% include main-loop-card. html %}     {% endif %}    {% endif %}    {% endfor %}    {% assign pages_list = nil %}    {% assign group = nil %}    {% endfor %}                  {% include sidebar-featured. html %}          "
     }, {
     "id": 4,
     "url": "http://localhost:4000/contact.html",
     "title": "Contact",
-    "body": "  Please send your message to blog. We will reply as soon as possible!   "
+    "body": "  Please send your message to {{site. name}}. We will reply as soon as possible!   "
     }, {
     "id": 5,
     "url": "http://localhost:4000/",
@@ -214,27 +217,162 @@ function lunr_search(term) {
 
     <!-- Content -->
     <main role="main" class="site-content">
-        <div class="container">
-<h3 class="font-weight-bold spanborder"><span>Contact</span></h3>
-<div class="page-content">
-<form action="https://formspree.io/cjh_719@outlook.com" method="POST">    
-<p class="mb-4">Please send your message to blog. We will reply as soon as possible!</p>
-<div class="form-group row">
-<div class="col-md-6">
-<input class="form-control" type="text" name="name" placeholder="Name*" required="" />
+        
+<div class="container">
+<div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+        <div class="row  justify-content-between ">
+            <div class=" col-md-6  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+                <p class="text-uppercase font-weight-bold">
+                    <span class="catlist">
+                    
+                      <a class="sscroll text-danger" href="/categories.html#main">main</a><span class="sep">, </span>
+                    
+                    </span>
+                </p>
+                <h1 class="display-4 mb-4 article-headline">Security Blog Description</h1>
+                <div class="d-flex align-items-center">
+                    
+                    <small class="ml-3"> 
+                        <span class="text-muted d-block mt-1">Jun 14, 2024 · <span class="reading-time">
+  
+  
+    1 min read
+  
+</span>
+    </span>
+                    </small>
+                </div>
+            </div>
+            
+            <div class="col-md-6 pr-0 align-self-center">
+                <img class="rounded" src="/assets/images/main1.jpg" alt="Security Blog Description">
+            </div>
+            
+        </div>
+    </div>
 </div>
-<div class="col-md-6">
-<input class="form-control" type="email" name="_replyto" placeholder="E-mail Address*" required="" />
 </div>
-</div>
-<textarea rows="8" class="form-control mb-3" name="message" placeholder="Message*" required=""></textarea>    
-<input class="btn btn-success" type="submit" value="Send" />
-</form>
 
-<!-- Comments -->
+<div class="container-lg pt-4 pb-4">
+    <div class="row justify-content-center">
+        
+        <!-- Share -->
+        <div class="col-lg-2 pr-4 mb-4 col-md-12">
+            <div class="sticky-top sticky-top-offset text-center">
+                <div class="text-muted">
+                    Share this
+                </div>
+                <div class="share d-inline-block">
+                    <!-- AddToAny BEGIN -->
+                    <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                        <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                        <a class="a2a_button_facebook"></a>
+                        <a class="a2a_button_twitter"></a>
+                    </div>
+                    <script async src="https://static.addtoany.com/menu/page.js"></script>
+                    <!-- AddToAny END -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-12 col-lg-8">
+            
+            <!-- Article -->
+            <article class="article-post">                
+            <p>Welcome to my security blog. I will document various projects and share detailed instructions. My first goal is to create a testing lab on AWS, complete with step-by-step directions and a Terraform script for easy replication. This will be a resource for anyone interested in setting up a similar environment.</p>
 
+<p>In this space, I will analyze and detonate malware, walk through scripts and code I develop, host my resume, discuss my certification studies, and review different attacks I encounter daily as a security analyst. Join me as I explore and share insights in the field of cybersecurity.</p>
+
+<p><a href="https://linkedin.com/in/clinton-howard">linkedin</a><br />
+<a href="https://github.com/howard1x5">github</a><br />
+<a href="https://www.credly.com/users/clinton-howard">credly</a></p>
+
+                
+            </article>
+            
+            <!-- Tags -->
+            <div class="mb-4">
+                <span class="taglist">
+                
+                  <a class="sscroll btn btn-light btn-sm font-weight-bold" href="/tags.html#introduction">introduction</a>
+                
+                  <a class="sscroll btn btn-light btn-sm font-weight-bold" href="/tags.html#description">description</a>
+                
+                </span>
+            </div>
+ 
+            <!-- Mailchimp Subscribe Form -->
+            
+            <div class="border p-5 bg-lightblue">
+                <div class="row justify-content-between">
+                    <div class="col-md-6 mb-2 mb-md-0">
+                        <h5 class="font-weight-bold">Join Newsletter</h5>
+                         Get the latest news right in your inbox. We never spam!
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <form action="https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate w-100" target="_blank" novalidate>
+                            <div class="mc-field-group">
+                            
+                                <input type="email" placeholder="Enter e-mail address" name="EMAIL" class="required email form-control w-100" id="mce-EMAIL" autocomplete="on" required>
+                            
+                            
+                                <button type="submit" value="Subscribe" name="subscribe" class="heart btn btn-success btn-block w-100 mt-2">Subscribe</button>
+                            
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+             <!-- Author Box -->
+                
+            
+            <!-- Comments -->
+            
+                <!--  Don't edit anything here. Set your disqus id in _config.yml -->
+
+<div id="comments" class="mt-5">
+    <div id="disqus_thread">
+    </div>
+    <script type="text/javascript">
+        var disqus_shortname = 'demowebsite'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>
+    Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
 </div>
+            
+            
+        </div>
+        
+    </div>
 </div>
+
+<!-- Aletbar Prev/Next -->
+<div class="alertbar">
+    <div class="container">
+        <div class="row prevnextlinks small font-weight-bold">
+          
+            <div class="col-md-6 rightborder pl-0">
+                <a class="text-dark" href="/second-test-post/"> <img height="30px" class="mr-1" src="/assets/images/test2.png">  Second Test Post</a>
+            </div>
+          
+          
+        </div>
+    </div>
+</div>
+
+
     </main>
 
 
