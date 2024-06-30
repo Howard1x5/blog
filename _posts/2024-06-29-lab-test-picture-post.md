@@ -3,6 +3,7 @@ layout: post
 title: "Second Test Lab Post"
 date: 2024-06-28
 categories: [ lab ]
+permalink: /lab/second-test-lab-post/
 image: assets/images/labTest.jpg
 excerpt: "This is a test post for the Lab category. Here is a brief overview of what the post is about."
 ---

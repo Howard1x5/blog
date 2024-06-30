@@ -3,6 +3,7 @@ layout: post
 title:  "Second Test Post"
 date: 2024-06-14
 categories: [ Coding ]
+permalink: /main/second-test-post/
 tags: [tag1, tag2]
 image: assets/images/test2.png
 ---
