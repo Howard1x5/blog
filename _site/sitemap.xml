@@ -61,10 +61,9 @@
 <loc>http://localhost:4000/privacy-policy.html</loc>
 </url>
 <url>
-<loc>http://localhost:4000/tags.html</loc>
+<loc>http://localhost:4000/resume/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/resume.html</loc>
-<lastmod>2024-06-29T20:09:17-06:00</lastmod>
+<loc>http://localhost:4000/tags.html</loc>
 </url>
 </urlset>

@@ -10,7 +10,7 @@ disqus: 'demowebsite'
 email: 'cjh_719@outlook.com'
 mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 
-include: ["_pages", "lab.html", "coding.html", "malware.html", "archive.html"]
+include: ["_pages", "lab.html", "coding.html", "malware.html", "archive.html, "resume.html"]
 permalink: /:title/
 
 # Build Settings
@@ -38,6 +38,7 @@ categories:
   - name: Lab
   - name: Malware
   - name: Archive
+  - name: Resume
 
  
 # Defaults
