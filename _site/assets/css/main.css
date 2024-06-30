@@ -8460,3 +8460,95 @@ html {
     align-self: baseline !important; }
   .align-self-xl-stretch {
     align-self: stretch !important; } }
+    
+.h-100.tofront {
+    min-height: auto !important; /* Override any min-height settings */
+    height: auto !important; /* Override any height settings */
+}
+
+.row.justify-content-center {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.col-md-8 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.article-headline {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.d-flex.align-items-center {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.text-uppercase.font-weight-bold {
+    margin-bottom: 0 !important;
+}
+
+.catlist {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Remove special styling for the first letter of the article */
+.article-post::first-letter {
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    float: none !important;
+    color: inherit !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.article-post::first-letter {
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    float: none !important;
+    color: inherit !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: inherit !important;
+}
+
+/*Main post image size*/
+
+.post-image {
+  text-align: center;
+}
+
+.post-image img {
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Add in styling for future in-post pictures and screenshots*/
+
+.article-post img {
+  display: block;
+  max-width: 150%; /* Ensure the image doesn't exceed the container's width */
+  width: 150%; /* Make the image take the full width of the container */
+  height: auto; /* Maintain aspect ratio */
+  margin: 20px auto; /* Center the image and add some vertical space */
+}
+
+
+/* Ensure the navbar remains fixed at the top */
+.topnav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+/* Adjust the body padding to avoid content being hidden under the navbar */
+body {
+  padding-top: 70px; /* Adjust this value based on the height of your navbar */
+}
+

@@ -4,25 +4,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>About | blog</title>
+    <title>Coding | blog</title>
 
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>About | blog</title>
+<title>Coding | blog</title>
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="About" />
+<meta property="og:title" content="Coding" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Description of my blog to track my projects" />
 <meta property="og:description" content="Description of my blog to track my projects" />
-<link rel="canonical" href="http://localhost:4000/about.html" />
-<meta property="og:url" content="http://localhost:4000/about.html" />
+<link rel="canonical" href="http://localhost:4000/coding/" />
+<meta property="og:url" content="http://localhost:4000/coding/" />
 <meta property="og:site_name" content="blog" />
-<meta property="og:image" content="http://localhost:4000/assets/images/screenshot.jpg" />
 <meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="http://localhost:4000/assets/images/screenshot.jpg" />
-<meta property="twitter:title" content="About" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Coding" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Description of my blog to track my projects","headline":"About","image":"http://localhost:4000/assets/images/screenshot.jpg","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"}},"url":"http://localhost:4000/about.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Description of my blog to track my projects","headline":"Coding","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"}},"url":"http://localhost:4000/coding/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -116,7 +114,7 @@ var documents = [{
     "id": 3,
     "url": "http://localhost:4000/archive/",
     "title": "Archive",
-    "body": "Archive {% for post in site. posts %}     {{ post. title }}   {{ post. date | date:  %B %d, %Y  }}   {% endfor %}"
+    "body": "Archive      Example Post with Screenshots   June 29, 2024        Second Test Lab Post   June 28, 2024        Malware Post   June 28, 2024        Lab Post   June 28, 2024        Coding Post   June 28, 2024        Second Test Post   June 14, 2024   "
     }, {
     "id": 4,
     "url": "http://localhost:4000/buy-me-a-coffee.html",
@@ -126,7 +124,7 @@ var documents = [{
     "id": 5,
     "url": "http://localhost:4000/categories.html",
     "title": "Categories",
-    "body": "          Categories          {% for category in site. categories %}     {{ category[0] }}:           {% assign pages_list = category[1] %}    {% for post in pages_list %}    {% if post. title != null %}     {% if group == null or group == post. group %}           {% include main-loop-card. html %}     {% endif %}    {% endif %}    {% endfor %}    {% assign pages_list = nil %}    {% assign group = nil %}    {% endfor %}                  {% include sidebar-featured. html %}          "
+    "body": "          Categories               test with picture:                                  		Second Test Post	: 		  This is a second post to see what it will look like on the main page. 	 			In 				test with picture, 								Jun 14, 2024						                              Coding:                                  		Coding Post	: 		  This is a test post for the Coding category. 	 			In 				Coding, 								Jun 28, 2024	                              Lab:                                  		Second Test Lab Post	: 		  This is a test post for the Lab category. Here is a brief overview of what the post is about. 	 			In 				Lab, 								Jun 28, 2024						                                 		Lab Post	: 		  This is a test post for the Lab category. 	 			In 				Lab, 								Jun 28, 2024	                              Malware:                                  		Malware Post	: 		  This is a test post for the Malware category. 	 			In 				Malware, 								Jun 28, 2024	                              malware:                                  		Example Post with Screenshots	: 		  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod, nisi vel consectetur euismod, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nisl. Lorem ipsum dolor sit a. . . 	 			In 				malware, 								Jun 29, 2024						                                             Featured:    				                  "
     }, {
     "id": 6,
     "url": "http://localhost:4000/coding/",
@@ -265,75 +263,27 @@ function lunr_search(term) {
     <!-- Content -->
     <main role="main" class="site-content">
         <div class="container">
-<h3 class="font-weight-bold spanborder"><span>About</span></h3>
-<div class="row">
-    <div class="col-md-8">
-     
-    <img class="card-img-top mb-5 shadow-lg" src="http://localhost:4000/assets/images/screenshot.jpg" alt="About"> 
-     
-    <div class="page-content">
-        <p>Made with <i class="fa fa-heart text-danger"></i> by Sal <a href="https://www.wowthemes.net/category/free-themes-templates/">@wowthemesnet</a>.</p>
-
-        <!-- Comments -->
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Coding</h1>
+      <ul class="list-unstyled">
         
-        <!--  Don't edit anything here. Set your disqus id in _config.yml -->
+          <li class="media mb-4">
+            
+            <div class="media-body">
+              <h5 class="mt-0 mb-1"><a href="/coding-test-post/">Coding Post</a></h5>
+              This is a test post for the Coding category.
 
-<div id="comments" class="mt-5">
-    <div id="disqus_thread">
+              <span class="text-muted d-block mt-1">June 28, 2024</span>
+            </div>
+          </li>
+        
+      </ul>
     </div>
-    <script type="text/javascript">
-        var disqus_shortname = 'demowebsite'; 
-        var disqus_developer = 0;
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>
-    Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-    </noscript>
-</div>
-        
-    </div>
-    </div>
-    <div class="col-md-4">
-        <!-- _includes/sidebar.html -->
-
-<div class="sidebar">
-    <h3>About</h3>
-    <p>Description of my blog to track my projects.</p>
-
-    <h3>Categories</h3>
-    <ul>
-        <li><a href="/coding.html">Coding</a></li>
-        <li><a href="/lab.html">Lab</a></li>
-        <li><a href="/cloud.html">Cloud</a></li>
-        <li><a href="/malware.html">Malware</a></li>
-        <li><a href="/resume.html">Resume</a></li>
-    </ul>
-
-    <h3>Archives</h3>
-    <ul>
-        
-            <li><a href="/malware-test-screenshot-post/">Example Post with Screenshots</a></li>
-        
-            <li><a href="/lab-test-picture-post/">Second Test Lab Post</a></li>
-        
-            <li><a href="/malware-test-post/">Malware Post</a></li>
-        
-            <li><a href="/lab-test-post/">Lab Post</a></li>
-        
-            <li><a href="/coding-test-post/">Coding Post</a></li>
-        
-            <li><a href="/second-test-post/">Second Test Post</a></li>
-        
-    </ul>
+  </div>
 </div>
 
-    </div>
-</div>  
-</div>
+
     </main>
 
 

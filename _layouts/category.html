@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>{{ page.title }}</h1>
+      <ul class="list-unstyled">
+        {% for post in site.categories[page.category] %}
+          <li class="media mb-4">
+            {% if post.image %}
+              <img src="{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}" class="mr-3" alt="{{ post.title }}" style="width: 100px; height: auto;">
+            {% endif %}
+            <div class="media-body">
+              <h5 class="mt-0 mb-1"><a href="{{ post.url }}">{{ post.title }}</a></h5>
+              {{ post.excerpt | strip_html | truncatewords: 30 }}
+              <span class="text-muted d-block mt-1">{{ post.date | date: "%B %d, %Y" }}</span>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+

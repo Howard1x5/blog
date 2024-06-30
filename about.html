@@ -1,247 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>About | blog</title>
+---
+layout: default
+title: About
+permalink: /about/
+---
 
-    <!-- Begin Jekyll SEO tag v2.8.0 -->
-    <title>About | blog</title>
-    <meta name="generator" content="Jekyll v4.3.3" />
-    <meta property="og:title" content="About" />
-    <meta property="og:locale" content="en_US" />
-    <meta name="description" content="Description of my blog to track my projects" />
-    <meta property="og:description" content="Description of my blog to track my projects" />
-    <link rel="canonical" href="http://localhost:4000/about.html" />
-    <meta property="og:url" content="http://localhost:4000/about.html" />
-    <meta property="og:site_name" content="blog" />
-    <meta property="og:image" content="http://localhost:4000/assets/images/screenshot.jpg" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:image" content="http://localhost:4000/assets/images/screenshot.jpg" />
-    <meta property="twitter:title" content="About" />
-    <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"WebPage","description":"Description of my blog to track my projects","headline":"About","image":"http://localhost:4000/assets/images/screenshot.jpg","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"}},"url":"http://localhost:4000/about.html"}
-    </script>
-    <!-- End Jekyll SEO tag -->
-
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
-
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-    <!-- Google Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
-
-    <!-- Bootstrap Modified -->
-    <link rel="stylesheet" href="/assets/css/main.css">
-
-    <!-- Theme Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/theme.css">
-
-    <!-- jQuery on header to make sure everything works, the rest of the scripts in footer for fast loading -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
-    <!-- This goes before </head> closing tag, Google Analytics can be placed here -->
-</head>
-
-<body class="">
-
-    <!-- Navbar -->
-    <nav id="MagicMenu" class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="/index.html"><strong>blog</strong></a>
-            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse" id="navbarColor02" style="">
-                <ul class="navbar-nav mr-auto d-flex align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/coding.html">Coding</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/lab.html">Lab</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/cloud.html">Cloud</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/malware.html">Malware</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/resume.html">Resume</a></li>
-                </ul>
-                <ul class="navbar-nav ml-auto d-flex align-items-center">
-                    <script src="/assets/js/lunr.js"></script>
-                    <script>
-                        $(function() {
-                            $("#lunrsearchresults").on('click', '#btnx', function () {
-                                $('#lunrsearchresults').hide(1000);
-                                $("body").removeClass("modal-open");
-                            });
-                        });
-
-                        var documents = [{
-                            "id": 0,
-                            "url": "http://localhost:4000/404/",
-                            "title": "",
-                            "body": "404 Page not found :( The requested page could not be found. "
-                        }, {
-                            "id": 1,
-                            "url": "http://localhost:4000/about.html",
-                            "title": "About",
-                            "body": "Description of my blog to track my projects."
-                        }, {
-                            "id": 2,
-                            "url": "http://localhost:4000/author-jane.html",
-                            "title": "Jane",
-                            "body": ""
-                        }, {
-                            "id": 3,
-                            "url": "http://localhost:4000/author-sal.html",
-                            "title": "howard1x5",
-                            "body": ""
-                        }, {
-                            "id": 4,
-                            "url": "http://localhost:4000/authors-list.html",
-                            "title": "Authors",
-                            "body": ""
-                        }, {
-                            "id": 5,
-                            "url": "http://localhost:4000/buy-me-a-coffee.html",
-                            "title": "Buy me a coffee",
-                            "body": ""
-                        }, {
-                            "id": 6,
-                            "url": "http://localhost:4000/categories.html",
-                            "title": "Categories",
-                            "body": ""
-                        }, {
-                            "id": 7,
-                            "url": "http://localhost:4000/contact.html",
-                            "title": "Contact",
-                            "body": ""
-                        }, {
-                            "id": 8,
-                            "url": "http://localhost:4000/",
-                            "title": "Mundana Free Jekyll Theme",
-                            "body": ""
-                        }, {
-                            "id": 9,
-                            "url": "http://localhost:4000/privacy-policy.html",
-                            "title": "Privacy Policy",
-                            "body": ""
-                        }, {
-                            "id": 10,
-                            "url": "http://localhost:4000/tags.html",
-                            "title": "Tags",
-                            "body": ""
-                        }, {
-                            "id": 11,
-                            "url": "http://localhost:4000/robots.txt",
-                            "title": "",
-                            "body": ""
-                        }, {
-                            "id": 12,
-                            "url": "http://localhost:4000/security-blog-description/",
-                            "title": "Security Blog Description",
-                            "body": ""
-                        }, {
-                            "id": 13,
-                            "url": "http://localhost:4000/second-test-post/",
-                            "title": "Second Test Post",
-                            "body": ""
-                        }];
-
-                        var idx = lunr(function () {
-                            this.ref('id')
-                            this.field('title')
-                            this.field('body')
-
-                            documents.forEach(function (doc) {
-                                this.add(doc)
-                            }, this)
-                        });
-
-                        function lunr_search(term) {
-                            $('#lunrsearchresults').show(1000);
-                            $("body").addClass("modal-open");
-
-                            document.getElementById('lunrsearchresults').innerHTML = '<div id="resultsmodal" class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="resultsmodal"> <div class="modal-dialog shadow-lg" role="document"> <div class="modal-content"> <div class="modal-header" id="modtit"> <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button> </div> <div class="modal-body"> <ul class="mb-0"> </ul> </div> <div class="modal-footer"><button id="btnx" type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button></div></div> </div></div>';
-                            if(term) {
-                                document.getElementById('modtit').innerHTML = "<h5 class='modal-title'>Search results for '" + term + "'</h5>" + document.getElementById('modtit').innerHTML;
-                                //put results on the screen.
-                                var results = idx.search(term);
-                                if(results.length>0){
-                                    //console.log(idx.search(term));
-                                    //if results
-                                    for (var i = 0; i < results.length; i++) {
-                                        // more statements
-                                        var ref = results[i]['ref'];
-                                        var url = documents[ref]['url'];
-                                        var title = documents[ref]['title'];
-                                        var body = documents[ref]['body'].substring(0,160)+'...';
-                                        document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML + "<li class='lunrsearchresult'><a href='" + url + "'><span class='title'>" + title + "</span><br /><small><span class='body'>"+ body +"</span><br /><span class='url'>"+ url +"</span></small></a></li>";
-                                    }
-                                } else {
-                                    document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = "<li class='lunrsearchresult'>Sorry, no results found. Close & try a different search!</li>";
-                                }
-                            }
-                            return false;
-                        }
-                    </script>
-                    <style>
-                        .lunrsearchresult .title {color: #d9230f;}
-                        .lunrsearchresult .url {color: silver;}
-                        .lunrsearchresult a {display: block; color: #777;}
-                        .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
-                        .lunrsearchresult a:hover .title {text-decoration: underline;}
-                    </style>
-
-                    <form class="bd-search hidden-sm-down" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
-                        <input type="text" class="form-control text-small" id="lunrsearch" name="q" value="" placeholder="Type keyword and enter..."> 
-                    </form>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Search Results -->
-    <div id="lunrsearchresults">
-        <ul class="mb-0"></ul>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1 class="display-4 mb-4 article-headline">Security Blog Description</h1>
+      <p class="text-muted d-block mt-1">June 14, 2024</p>
+      <div class="article-body">
+        <p>Welcome to my security blog. I will document various projects and share detailed instructions. My first goal is to create a testing lab on AWS, complete with step-by-step directions and a Terraform script for easy replication. This will be a resource for anyone interested in setting up a similar environment.</p>
+        <p>In this space, I will analyze and detonate malware, walk through scripts and code I develop, host my resume, discuss my certification studies, and review different attacks I encounter daily as a security analyst. Join me as I explore and share insights in the field of cybersecurity.</p>
+        <p>
+          <a href="https://linkedin.com/in/clinton-howard">LinkedIn</a><br>
+          <a href="https://github.com/howard1x5">GitHub</a><br>
+          <a href="https://www.credly.com/users/clinton-howard">Credly</a>
+        </p>
+      </div>
     </div>
+  </div>
+</div>
 
-    <!-- Content -->
-    <main role="main" class="site-content">
-        <div class="container">
-            <h3 class="font-weight-bold spanborder"><span>About</span></h3>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="page-content">
-                        <p>Description of my blog to track my projects.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
 
-    <!-- Scripts: popper, bootstrap, theme, lunr -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    <script src="/assets/js/theme.js"></script>
-
-    <!-- Footer -->
-    <footer class="bg-white border-top p-3 text-muted small">
-        <div class="container">
-            <div class="row align-items-center justify-content-between">
-                <div>
-                    <span class="navbar-brand mr-2 mb-0"><strong>blog</strong></span>
-                    <span>Copyright © <script>document.write(new Date().getFullYear())</script>.</span>
-                    <!-- Github Repo Star Btn -->
-                    <a class="text-dark ml-1" target="_blank" href="https://github.com/wowthemesnet/mundana-theme-jekyll"><i class="fab fa-github"></i> Fork on Github</a>
-                </div>
-                <div>
-                    Made with <a target="_blank" class="text-dark font-weight-bold" href="#">Mundana Jekyll Theme</a>.
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- All this area goes before </body> closing tag -->
-</body>
-</html>
 

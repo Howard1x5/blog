@@ -10,7 +10,7 @@ disqus: 'demowebsite'
 email: 'cjh_719@outlook.com'
 mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 
-include: ["_pages"]
+include: ["_pages", "lab.html", "coding.html", "malware.html", "archive.html"]
 permalink: /:title/
 
 # Build Settings
@@ -30,27 +30,40 @@ authors:
       email:          howard1x5@protonmail.com
       twitter:        https://x.com/5x1drawoh?t=yOiQyVzJA_MGy3Rmk_l3BA&s=09
 
+
+categories:
+  - name: Home
+  - name: About
+  - name: Coding
+  - name: Lab
+  - name: Malware
+  - name: Archive
+
+ 
 # Defaults
 defaults:
+
   # all posts
   - scope:
       path: "_posts"
     values:
       layout: post
       author: 
-
+      
   # all pages
   - scope:
       path: "_pages"
     values:
       layout: page
-
+      
 # Syntax
 markdown: kramdown
 highlighter: rouge
 
 # Paginate
 paginate: 10
+
+
 
 # Exclude metadata and development time dependencies (like Grunt plugins)
 exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules]

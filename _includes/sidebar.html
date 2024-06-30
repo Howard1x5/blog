@@ -1,13 +1,22 @@
-<!-- Updated sidebar.html -->
-<h5 class="mb-3">Categories</h5>
+<!-- _includes/sidebar.html -->
 
-<p>Explore the different sections of the blog:</p>
+<div class="sidebar">
+    <h3>About</h3>
+    <p>Description of my blog to track my projects.</p>
 
-<ul>
-  <li><a href="{{site.baseurl}}/about.html">About</a></li>
-  <li><a href="{{site.baseurl}}/coding.html">Coding</a></li>
-  <li><a href="{{site.baseurl}}/lab.html">Lab</a></li>
-  <li><a href="{{site.baseurl}}/cloud.html">Cloud</a></li>
-  <li><a href="{{site.baseurl}}/malware.html">Malware</a></li>
-  <li><a href="{{site.baseurl}}/resume.html">Resume</a></li>
-</ul>
+    <h3>Categories</h3>
+    <ul>
+        <li><a href="{{ site.baseurl }}/coding.html">Coding</a></li>
+        <li><a href="{{ site.baseurl }}/lab.html">Lab</a></li>
+        <li><a href="{{ site.baseurl }}/cloud.html">Cloud</a></li>
+        <li><a href="{{ site.baseurl }}/malware.html">Malware</a></li>
+        <li><a href="{{ site.baseurl }}/resume.html">Resume</a></li>
+    </ul>
+
+    <h3>Archives</h3>
+    <ul>
+        {% for post in site.posts %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
