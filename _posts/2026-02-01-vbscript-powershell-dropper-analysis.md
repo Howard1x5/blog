@@ -22,7 +22,7 @@ First thing I tried was searching for common VBScript execution methods. I searc
 
 Then I searched for `GetObject` and got a hit:
 
-![GetObject search results in Notepad++](/assets/images/malware/vbscript-dropper/09-getobject-found.png)
+![GetObject search results in Notepad++](/blog/assets/images/malware/vbscript-dropper/09-getobject-found.png)
 *Figure 1: Found GetObject which is used for WMI execution*
 
 This is how the malware calls out to WMI. But the actual commands being passed to it were all obfuscated. I needed to find the decoder functions.
@@ -31,7 +31,7 @@ This is how the malware calls out to WMI. But the actual commands being passed t
 
 I searched for "Function" in Notepad++ and found 15 hits. Scrolling through them, I could see four functions that looked like they were doing the decoding work:
 
-![Function search showing decoder functions](/assets/images/malware/vbscript-dropper/01-decoder-functions.png)
+![Function search showing decoder functions](/blog/assets/images/malware/vbscript-dropper/01-decoder-functions.png)
 *Figure 2: Search results showing the decoder functions*
 
 The function names are all garbage strings like `RWYGDTJTOHTCVIJCTKNJXY` but you can see them being called in the search results at the bottom. I needed to figure out what each one does.
@@ -40,7 +40,7 @@ The function names are all garbage strings like `RWYGDTJTOHTCVIJCTKNJXY` but you
 
 The first function I looked at was `RWYGDTJTOHTCVIJCTKNJXY`. Looking at the code:
 
-![ASCII shift function code](/assets/images/malware/vbscript-dropper/02-ascii-shift-function.png)
+![ASCII shift function code](/blog/assets/images/malware/vbscript-dropper/02-ascii-shift-function.png)
 *Figure 3: The ASCII shift function*
 
 This one loops through each character, gets the ASCII value with `Asc()`, subtracts 1, then converts back to a character with `Chr()`. Classic Caesar cipher with a shift of 1.
@@ -49,7 +49,7 @@ This one loops through each character, gets the ASCII value with `Asc()`, subtra
 
 The next function `LOOIMKHOROIYNCTVGPKNGC` looked more complicated because it has XOR operations:
 
-![String reversal function with XOR](/assets/images/malware/vbscript-dropper/13-reversal-function.png)
+![String reversal function with XOR](/blog/assets/images/malware/vbscript-dropper/13-reversal-function.png)
 *Figure 4: The reversal function*
 
 I stared at this for a while before I realized the XOR operations completely cancel out. It XORs a value, then XORs it again with the same key. `A XOR B XOR B = A`. So all this function actually does is reverse the string. The XOR is just there to make it look more complex.
@@ -58,7 +58,7 @@ I stared at this for a while before I realized the XOR operations completely can
 
 The third function `PIBCVBCJVWQYLJMSLLGTXM` does hex decoding plus XOR:
 
-![Hex decode and XOR function](/assets/images/malware/vbscript-dropper/14-hex-xor-function.png)
+![Hex decode and XOR function](/blog/assets/images/malware/vbscript-dropper/14-hex-xor-function.png)
 *Figure 5: Hex decode with XOR*
 
 It reads hex pairs from the input, converts them to bytes, then XORs each byte with a character from the key. The key cycles if the input is longer than the key.
@@ -67,7 +67,7 @@ It reads hex pairs from the input, converts them to bytes, then XORs each byte w
 
 The fourth function `WBSWDTGSJCVPTRBKRAJRUO` uses a Select Case to return different encoded values:
 
-![Array lookup function with Case statements](/assets/images/malware/vbscript-dropper/12-array-lookup-function.png)
+![Array lookup function with Case statements](/blog/assets/images/malware/vbscript-dropper/12-array-lookup-function.png)
 *Figure 6: Array lookup function*
 
 So `WBSWDTGSJCVPTRBKRAJRUO(2)` returns whatever encoded value is stored in Case 2.
@@ -76,7 +76,7 @@ So `WBSWDTGSJCVPTRBKRAJRUO(2)` returns whatever encoded value is stored in Case 
 
 The actual encoded strings were stored as properties on a custom object. I searched for the object name and found all the assignments:
 
-![Encoded payloads stored in object properties](/assets/images/malware/vbscript-dropper/04-encoded-payloads.png)
+![Encoded payloads stored in object properties](/blog/assets/images/malware/vbscript-dropper/04-encoded-payloads.png)
 *Figure 7: The encoded payload strings*
 
 I noticed something weird here. The hex strings have characters that aren't valid hex: colons (`:`) and the letter `g`. These get stripped during decoding. Another layer of obfuscation.
@@ -89,19 +89,19 @@ The XOR key was stored as `EMTJSDDRKIFGIKQWNIMD` and needed to be decoded throug
 
 I dropped it into CyberChef with an ADD operation set to -1. First try with HEX mode selected:
 
-![CyberChef with HEX mode showing wrong output](/assets/images/malware/vbscript-dropper/10-cyberchef-hex-wrong.png)
+![CyberChef with HEX mode showing wrong output](/blog/assets/images/malware/vbscript-dropper/10-cyberchef-hex-wrong.png)
 *Figure 8: Wrong! HEX mode gave me the wrong output*
 
 The output was `FNUKTEESLJGHJLRXOJNE`. That's wrong because it shifted UP by 1 instead of down. The -1 was being interpreted as a hex value.
 
 I switched the dropdown from HEX to DECIMAL:
 
-![CyberChef with DECIMAL mode showing correct output](/assets/images/malware/vbscript-dropper/11-cyberchef-decimal-correct.png)
+![CyberChef with DECIMAL mode showing correct output](/blog/assets/images/malware/vbscript-dropper/11-cyberchef-decimal-correct.png)
 *Figure 9: Correct! DECIMAL mode gave the right XOR key*
 
 Output: `DLSIRCCQJHEFHJPVMHLC`. That's the decoded XOR key. I made a note of it:
 
-![Notes with decoded XOR key](/assets/images/malware/vbscript-dropper/15-notes-xor-key.png)
+![Notes with decoded XOR key](/blog/assets/images/malware/vbscript-dropper/15-notes-xor-key.png)
 *Figure 10: My notes tracking the XOR key*
 
 ## Building the Full CyberChef Recipe
@@ -118,14 +118,14 @@ So to decode I would need to do the opposite in reverse order.
 
 First attempt at the full recipe:
 
-![CyberChef first attempt with garbage output](/assets/images/malware/vbscript-dropper/16-cyberchef-wrong-order.png)
+![CyberChef first attempt with garbage output](/blog/assets/images/malware/vbscript-dropper/16-cyberchef-wrong-order.png)
 *Figure 11: First attempt. Garbage output with control characters.*
 
 That's clearly not right. The output is showing control characters and random symbols.
 
 I tried rearranging the operations:
 
-![CyberChef second attempt still garbage](/assets/images/malware/vbscript-dropper/18-cyberchef-still-garbage.png)
+![CyberChef second attempt still garbage](/blog/assets/images/malware/vbscript-dropper/18-cyberchef-still-garbage.png)
 *Figure 12: Still garbage. Something is wrong with my operation order.*
 
 At this point I was getting frustrated. I went back to the VBScript code and traced through it more carefully.
@@ -145,7 +145,7 @@ The innermost function runs first. So the encoding order is:
 
 I had the order wrong. I tried again with different orderings:
 
-![CyberChef another wrong attempt](/assets/images/malware/vbscript-dropper/19-cyberchef-wrong-order2.png)
+![CyberChef another wrong attempt](/blog/assets/images/malware/vbscript-dropper/19-cyberchef-wrong-order2.png)
 *Figure 13: Another wrong attempt. Still getting garbage.*
 
 The XOR was in the wrong position in my recipe.
@@ -154,7 +154,7 @@ The XOR was in the wrong position in my recipe.
 
 After more trial and error, I got it working:
 
-![CyberChef success showing decoded WMI string](/assets/images/malware/vbscript-dropper/20-cyberchef-success.png)
+![CyberChef success showing decoded WMI string](/blog/assets/images/malware/vbscript-dropper/20-cyberchef-success.png)
 *Figure 14: Success! The decoded WMI connection string.*
 
 The output is `winmgmts:{impersonationLevel=impersonate,authenticationLevel=pktPrivacy}!\`
@@ -172,7 +172,7 @@ The working recipe:
 
 Running all the encoded strings through my recipe, I built up the complete picture:
 
-![All decoded strings in Notepad++](/assets/images/malware/vbscript-dropper/05-decoded-wmi-dropper.png)
+![All decoded strings in Notepad++](/blog/assets/images/malware/vbscript-dropper/05-decoded-wmi-dropper.png)
 *Figure 15: All the decoded strings showing the WMI execution and dropper code*
 
 The VBScript uses WMI to spawn a hidden PowerShell process:
@@ -213,7 +213,7 @@ I fetched the second stage payload (178KB) and transferred it to my isolated FLA
 
 The first thing I noticed was commands being built by indexing into scrambled strings:
 
-![PowerShell with index array obfuscation](/assets/images/malware/vbscript-dropper/06-powershell-index-decode.png)
+![PowerShell with index array obfuscation](/blog/assets/images/malware/vbscript-dropper/06-powershell-index-decode.png)
 *Figure 16: Decoding the index arrays in PowerShell*
 
 ```powershell
@@ -226,7 +226,7 @@ I ran these directly in PowerShell on the isolated VM. The outputs were `Test-Pa
 
 This was the clever one. Large blocks of security-themed text that look like comments:
 
-![Substring obfuscation with decoy text](/assets/images/malware/vbscript-dropper/08-substring-obfuscation.png)
+![Substring obfuscation with decoy text](/blog/assets/images/malware/vbscript-dropper/08-substring-obfuscation.png)
 *Figure 17: Decoy strings with intentional typos for character extraction*
 
 ```powershell
@@ -240,7 +240,7 @@ The text has intentional typos and weird capitalization like "Multi-faCtor" with
 
 The dropper creates directories in `C:\ProgramData\` that look like legitimate Microsoft paths:
 
-![Persistence paths in ProgramData](/assets/images/malware/vbscript-dropper/07-persistence-paths.png)
+![Persistence paths in ProgramData](/blog/assets/images/malware/vbscript-dropper/07-persistence-paths.png)
 *Figure 18: Fake Microsoft paths for persistence*
 
 The paths use real Microsoft folder names like `OneAuth`, `PackageCache`, `DeliveryOptimization` combined in ways that look plausible but don't exist on a clean system:
